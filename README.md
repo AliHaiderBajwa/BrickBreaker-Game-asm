@@ -6,7 +6,6 @@
 ---
 
 ##  Team
-|---|
 | Ali Haider Bajwa |
 | Jehangir         |
 | Taimoor          |
