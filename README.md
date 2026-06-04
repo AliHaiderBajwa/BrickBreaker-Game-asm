@@ -5,20 +5,20 @@
 
 ---
 
-## 👥 Team
+##  Team
 
 | Name | Roll Number |
 |---|---|
-| Ali Haider Bajwa | 24i-3102 |
-| Jehangir | 24i-3055 |
-| Taimoor | 24i-3143 |
-| Abdul Wadood | 24i-3052 |
+| Ali Haider Bajwa |
+| Jehangir         |
+| Taimoor          |
+| Abdul Wadood     |
 
-**Section:** SE-C &nbsp;|&nbsp; **Course:** Computer Organization and Assembly Language (COAL)
+**Course:** Computer Organization and Assembly Language (COAL)
 
 ---
 
-## 🎮 Features
+## Game Features
 
 ### Core Gameplay
 - **Paddle** controlled via keyboard (A/D, arrow keys) **or mouse** — both work simultaneously
@@ -73,7 +73,7 @@ brick-breaker-asm/
 ├── game.asm          # Full source — 2630 lines of x86 MASM assembly
 ├── score.dat         # Created at runtime; stores high score & player name
 ├── docs/
-│   ├── Iteration3_Requirements.pdf   # Assignment brief
+│   ├── COAL_Project_Statement.pdf   # Assignment brief
 │   └── Iteration3_Documentation.pdf  # Technical report (level design, bonus logic, game flow)
 └── README.md
 ```
@@ -90,7 +90,7 @@ brick-breaker-asm/
 
 ```bash
 # 1. Mount your project folder in DOSBox
-mount c C:\path\to\brick-breaker-asm
+mount c C:\path\to\BrickBreaker-Game-asm
 c:
 
 # 2. Assemble
