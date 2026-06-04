@@ -6,8 +6,6 @@
 ---
 
 ##  Team
-
-| Name |
 |---|
 | Ali Haider Bajwa |
 | Jehangir         |
