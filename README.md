@@ -1,6 +1,4 @@
 # 🧱 Brick Breaker - x86 Assembly
-### COAL Project · FAST-NUCES Islamabad · Spring 2026
-
 > A fully-featured Brick Breaker game written entirely in **8086 x86 Assembly (MASM)**, running in **VGA Mode 13h** (320×200, 256 colours) under DOSBox. Built from scratch across three iterations - no high-level languages, no libraries.
 
 ---
@@ -10,8 +8,6 @@
 | Jehangir         |
 | Taimoor          |
 | Abdul Wadood     |
-
-**Course:** Computer Organization and Assembly Language (COAL)
 
 ---
 
@@ -144,4 +140,4 @@ High score persistence uses **DOS INT 21h** (functions `3Ch` create, `3Dh` open,
 
 ## 📄 License
 
-This project was developed as an academic submission for the Computer Organization and Assembly Language course at FAST-NUCES Islamabad. Free to reference for educational purposes.
+Feel Free to use or learn from this. Credit appreciated but not required.
