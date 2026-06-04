@@ -7,8 +7,8 @@
 
 ##  Team
 
-| Name | Roll Number |
-|---|---|
+| Name |
+|---|
 | Ali Haider Bajwa |
 | Jehangir         |
 | Taimoor          |
