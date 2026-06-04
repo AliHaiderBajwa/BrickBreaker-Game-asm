@@ -1,7 +1,7 @@
-# 🧱 Brick Breaker — x86 Assembly
+# 🧱 Brick Breaker - x86 Assembly
 ### COAL Project · FAST-NUCES Islamabad · Spring 2026
 
-> A fully-featured Brick Breaker game written entirely in **8086 x86 Assembly (MASM)**, running in **VGA Mode 13h** (320×200, 256 colours) under DOSBox. Built from scratch across three iterations — no high-level languages, no libraries.
+> A fully-featured Brick Breaker game written entirely in **8086 x86 Assembly (MASM)**, running in **VGA Mode 13h** (320×200, 256 colours) under DOSBox. Built from scratch across three iterations - no high-level languages, no libraries.
 
 ---
 
@@ -18,10 +18,10 @@
 ## Game Features
 
 ### Core Gameplay
-- **Paddle** controlled via keyboard (A/D, arrow keys) **or mouse** — both work simultaneously
+- **Paddle** controlled via keyboard (A/D, arrow keys) **or mouse** - both work simultaneously
 - **Ball physics** with wall, ceiling, and paddle bounce
 - **4×8 brick grid** per level with collision detection and destruction
-- **3 Lives** — miss the ball and lose a life; lose all three and it's Game Over
+- **3 Lives** - miss the ball and lose a life; lose all three and it's Game Over
 
 ### Three Levels of Increasing Difficulty
 
@@ -54,12 +54,12 @@ Splash Screen → Name Entry → Main Menu
 ```
 
 ### Bonus Features (Iteration 3)
-- **Pause / Resume** — press `P` at any time; game state is fully preserved
-- **Mouse support** — INT 33h polling maps cursor X directly to paddle position
-- **Ball trail effect** — 3-frame motion trail (dark grey → light grey → white) for visual speed feedback
-- **Persistent high score** — saved to `score.dat` via DOS INT 21h file I/O; survives between sessions
-- **Level Select screen** — start from any level, not forced to begin at Level 1
-- **HUD** — live score, lives, and current level displayed during gameplay
+- **Pause / Resume** - press `P` at any time; game state is fully preserved
+- **Mouse support** - INT 33h polling maps cursor X directly to paddle position
+- **Ball trail effect** - 3-frame motion trail (dark grey → light grey → white) for visual speed feedback
+- **Persistent high score** - saved to `score.dat` via DOS INT 21h file I/O; survives between sessions
+- **Level Select screen** - start from any level, not forced to begin at Level 1
+- **HUD** - live score, lives, and current level displayed during gameplay
 
 ---
 
@@ -67,7 +67,7 @@ Splash Screen → Name Entry → Main Menu
 
 ```
 brick-breaker-asm/
-├── game.asm          # Full source — 2630 lines of x86 MASM assembly
+├── game.asm          # Full source - 2630 lines of x86 MASM assembly
 ├── score.dat         # Created at runtime; stores high score & player name
 ├── docs/
 │   ├── COAL_Project_Statement.pdf   # Assignment brief
@@ -100,7 +100,7 @@ link game.obj;
 game.exe
 ```
 
-> **Note:** The game targets real-mode DOS. Run exclusively inside DOSBox — do not attempt to run the `.exe` natively on Windows/Linux.
+> **Note:** The game targets real-mode DOS. Run exclusively inside DOSBox - do not attempt to run the `.exe` natively on Windows/Linux.
 
 ---
 
@@ -110,13 +110,13 @@ game.exe
 All rendering is done via **direct VGA memory writes** to segment `A000h`. No BIOS graphics interrupts are used for pixel-level drawing. Rectangles, text glyphs, and the brick grid are all written byte-by-byte into video memory.
 
 ### Anti-Flicker Strategy
-A `SavePreviousPositions` snapshot captures the paddle, ball, and bonus coordinates (including the 3-frame ball trail) each frame. `DrawGameFrame` erases only the previous bounding boxes with black fills before redrawing at new positions — avoiding full-screen redraws and eliminating flicker.
+A `SavePreviousPositions` snapshot captures the paddle, ball, and bonus coordinates (including the 3-frame ball trail) each frame. `DrawGameFrame` erases only the previous bounding boxes with black fills before redrawing at new positions - avoiding full-screen redraws and eliminating flicker.
 
 ### Pseudorandom Number Generation
 A lightweight seed (`randSeed`) is incremented every frame by `UpdateBall`. Bonus spawn uses `(randSeed AND 03h) = 0` as a gate (~25% probability), and `brickIndex + currentLevel` is mixed into the seed to prevent predictable patterns.
 
 ### File I/O
-High score persistence uses **DOS INT 21h** (functions `3Ch` create, `3Dh` open, `3Fh` read, `40h` write, `3Eh` close) to read and write `score.dat` — demonstrating file handling entirely in assembly.
+High score persistence uses **DOS INT 21h** (functions `3Ch` create, `3Dh` open, `3Fh` read, `40h` write, `3Eh` close) to read and write `score.dat` - demonstrating file handling entirely in assembly.
 
 ### Input
 - **Keyboard:** INT 16h non-blocking poll (`AH=01h` check + `AH=00h` read)
